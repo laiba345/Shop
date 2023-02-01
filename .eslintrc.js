@@ -13,5 +13,15 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+  },
+  module: {
+
+    loaders: [
+
+      { test: /\.js$/, exlude: /node_modules/, loader: "babel-loader" },
+
+      { test: /\.less$/, loader: "style!css!less" }
+
+    ]
   }
 }
